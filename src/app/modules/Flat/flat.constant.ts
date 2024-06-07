@@ -1,5 +1,1 @@
-export const searchableFields = [
-  'location',
-  // 'utilitiesDescription',
-  // 'description',
-];
+export const searchableFields = ['location'];

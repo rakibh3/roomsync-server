@@ -4,8 +4,6 @@ import { searchableFields } from './flat.constant';
 import paginaton from '../../utils/pagination';
 import { TSearchAvailableFlats } from './flat.interface';
 import { TPaginationOptions } from '../../interfaces/pagination';
-import { Request } from 'express';
-import { TFile } from '../../interfaces/file';
 
 // Create flat into DB
 const createFlatIntoDB = async (id: string, payLoad: Flat) => {
