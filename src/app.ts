@@ -29,6 +29,7 @@ const corsOptionsDelegate = function (req: Request, callback: any) {
 // Parser
 app.use(express.json());
 app.use(cookieParser());
+app.options('*', cors(corsOptionsDelegate));
 app.use(cors(corsOptionsDelegate));
 
 // Application Routes
