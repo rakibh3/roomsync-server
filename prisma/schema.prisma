@@ -37,7 +37,7 @@ model Flat {
   rent                 Int         
   totalBedrooms        Int   
   amenities            String[]
-  flatPhotos           String?      
+  flatPhotos           String[]      
   squareFeet           Int         
   totalRooms           Int         
   availability         Boolean     @default(true)
