@@ -16,11 +16,13 @@ router.post(
   validateRequest(bookingCreateValidationSchema),
   bookingController.createBooking
 );
+
 router.get(
   '/booking-requests',
   auth(UserRole.ADMIN, UserRole.USER),
   bookingController.getAllBookings
 );
+
 router.put(
   '/booking-requests/:bookingId',
   auth(UserRole.ADMIN, UserRole.USER),
