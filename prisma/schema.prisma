@@ -40,8 +40,6 @@ model Flat {
   flatPhotos           String?      
   squareFeet           Int         
   totalRooms           Int         
-  utilitiesDescription String 
-  advanceAmount        Int         
   availability         Boolean     @default(true)
   createdAt            DateTime    @default(now()) 
   updatedAt            DateTime    @updatedAt    
