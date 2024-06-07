@@ -23,10 +23,17 @@ export const flatCreateValidationSchema = z.object({
       invalid_type_error: 'Amenities must be a string',
     })
   ),
-  flatPhotos: z.string({
-    required_error: 'Flat photos is required',
-    invalid_type_error: 'Flat photos must be a string',
-  }),
+
+  flatPhotos: z
+    .array(
+      z.string({
+        required_error: 'Flat photos is required',
+      })
+    )
+    .nonempty({
+      message: 'At least one flat photo and max four is required',
+    }),
+
   squareFeet: z
     .number({
       required_error: 'Square feet is required',
