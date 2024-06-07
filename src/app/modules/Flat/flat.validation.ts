@@ -38,28 +38,16 @@ export const flatCreateValidationSchema = z.object({
     .number({ required_error: 'Total rooms is required' })
     .int()
     .min(1, { message: 'Total rooms must be a positive integer' }),
-  utilitiesDescription: z.string({
-    required_error: 'Utilities description is required',
-    invalid_type_error: 'Utilities description must be a string',
-  }),
 
   availability: z.boolean().default(true),
-  advanceAmount: z
-    .number({
-      required_error: 'Advance amount is required',
-    })
-    .int()
-    .min(0, { message: 'Advance amount must be a positive integer' }),
 });
 
 export const flatUpdateValidationSchema = z.object({
   squareFeet: z.number().int().min(1).optional(),
   totalBedrooms: z.number().int().min(1).optional(),
   totalRooms: z.number().int().min(1).optional(),
-  utilitiesDescription: z.string().optional(),
   location: z.string().optional(),
   description: z.string().optional(),
   rent: z.number().int().min(1).optional(),
   availability: z.boolean().default(true),
-  advanceAmount: z.number().int().min(1).optional(),
 });
