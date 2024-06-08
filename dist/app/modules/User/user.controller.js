@@ -49,7 +49,7 @@ const updateUserProfile = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(v
         data: result,
     });
 }));
-// Update user profile
+// Manage user profile
 const managerUser = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { userId } = req.params;
     const result = yield user_service_1.userService.manageUserProfileInDB(userId, req.body);

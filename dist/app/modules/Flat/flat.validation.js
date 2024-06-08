@@ -23,9 +23,12 @@ exports.flatCreateValidationSchema = zod_1.z.object({
         required_error: 'Amenities is required',
         invalid_type_error: 'Amenities must be a string',
     })),
-    flatPhotos: zod_1.z.string({
+    flatPhotos: zod_1.z
+        .array(zod_1.z.string({
         required_error: 'Flat photos is required',
-        invalid_type_error: 'Flat photos must be a string',
+    }))
+        .nonempty({
+        message: 'At least one flat photo and max four is required',
     }),
     squareFeet: zod_1.z
         .number({
@@ -37,26 +40,14 @@ exports.flatCreateValidationSchema = zod_1.z.object({
         .number({ required_error: 'Total rooms is required' })
         .int()
         .min(1, { message: 'Total rooms must be a positive integer' }),
-    utilitiesDescription: zod_1.z.string({
-        required_error: 'Utilities description is required',
-        invalid_type_error: 'Utilities description must be a string',
-    }),
     availability: zod_1.z.boolean().default(true),
-    advanceAmount: zod_1.z
-        .number({
-        required_error: 'Advance amount is required',
-    })
-        .int()
-        .min(0, { message: 'Advance amount must be a positive integer' }),
 });
 exports.flatUpdateValidationSchema = zod_1.z.object({
     squareFeet: zod_1.z.number().int().min(1).optional(),
     totalBedrooms: zod_1.z.number().int().min(1).optional(),
     totalRooms: zod_1.z.number().int().min(1).optional(),
-    utilitiesDescription: zod_1.z.string().optional(),
     location: zod_1.z.string().optional(),
     description: zod_1.z.string().optional(),
     rent: zod_1.z.number().int().min(1).optional(),
     availability: zod_1.z.boolean().default(true),
-    advanceAmount: zod_1.z.number().int().min(1).optional(),
 });
