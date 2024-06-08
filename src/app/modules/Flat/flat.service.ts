@@ -107,8 +107,16 @@ const updateFlatByIdIntoDB = async (id: string, payLoad: Partial<Flat>) => {
 
 // Delete flat by ID from DB
 const deleteFlatByIdFromDB = async (id: string) => {
-  const result = await prisma.flat.delete({
-    where: { id },
+  const result = await prisma.$transaction(async (transactionClient) => {
+    await transactionClient.booking.deleteMany({
+      where: { flatId: id },
+    });
+
+    const deletedFlat = await transactionClient.flat.delete({
+      where: { id },
+    });
+
+    return deletedFlat;
   });
   return result;
 };
