@@ -1,4 +1,4 @@
-# Flat Share
+# Giftery
 
 ## Installation
 
@@ -7,13 +7,13 @@ Step-by-step instructions on how to install the application.
 - Clone the repository:
 
 ```
-git clone https://github.com/Porgramming-Hero-web-course/l2-b2-fullstack-track-assignment-8-rakibh3.git
+git clone https://github.com/rakibh3/roomsync-server
 ```
 
 - Navigate to the project directory:
 
 ```
-cd l2-b2-fullstack-track-assignment-8-rakibh3
+cd roomsync-server
 ```
 
 - Install dependencies:
@@ -28,17 +28,11 @@ Create a .env file in the root directory and add necessary environment variables
 
 ```
 DATABASE_URL = your_database_connection_string
-
 PORT = 5000
-
 BCRYPT_SALT_ROUNDS = 12
-
-JWT_ACCESS_SECRET = b1ba4a343e1fdd7a85ef607855e2f3399de669bad
-
-JWT_REFRESH_SECRET = 41b991b21dc0a439cb45fed544992ba3fafa3f912d3c4dedebec3592d7d55
-
-JWT_ACCESS_EXPIRES_IN = 20d
-
+JWT_ACCESS_SECRET = your_jwt_access_secret
+JWT_REFRESH_SECRET = your_jwt_refresh_secret
+JWT_ACCESS_EXPIRES_IN = 1d
 JWT_REFRESH_EXPIRES_IN = 365d
 ```
 
@@ -50,4 +44,10 @@ Start the application:
 
 ```
 npm run start:dev
+```
+
+## Link Server Deploy Link
+
+```
+https://roomsync-c44e35797ee9.herokuapp.com
 ```
