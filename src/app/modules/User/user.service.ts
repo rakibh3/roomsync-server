@@ -119,7 +119,9 @@ const manageUserProfileInDB = async (id: string, payLoad: TManageUser) => {
 const getAllUsersFromDB = async () => {
   const result = await prisma.user.findMany({
     where: {
-      role: 'USER',
+      role: {
+        in: ['ADMIN', 'USER'],
+      },
     },
     select: {
       id: true,
