@@ -5,6 +5,7 @@
   "author": "Md Rakibul Hasan <hello.rakibh@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "postinstall": "npx prisma migrate dev --name init",
     "build": "tsc",
     "start": "node ./dist/server.js",
     "start:prod": "node ./dist/server.js",
